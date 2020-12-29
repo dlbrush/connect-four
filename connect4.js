@@ -45,7 +45,7 @@ function makeHtmlBoard() {
   }
   htmlBoard.append(top);
 
-  // Then create the game board itself. Create table rows
+  // Then create the game board itself. Create table rows equal to the value of HEIGHT, and cells in each row equal to the value of WIDTH. Cell ID will be equal to the value
   for (let y = 0; y < HEIGHT; y++) {
     const row = document.createElement("tr");
     for (var x = 0; x < WIDTH; x++) {
@@ -67,7 +67,10 @@ function findSpotForCol(x) {
 /** placeInTable: update DOM to place piece into HTML table of board */
 
 function placeInTable(y, x) {
-  // TODO: make a div and insert into correct table cell
+  //Make a div, give it a class of piece and the current player, and insert into the table cell with the ID of the coordinates passed
+  const piece = document.createElement('div');
+  piece.className = `piece p${currPlayer}`;
+  document.getElementById(`${y}-${x}`).append(piece);
 }
 
 /** endGame: announce game end */
