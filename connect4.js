@@ -114,6 +114,7 @@ function handleClick(evt) {
 
   // switch players if the game is continuing
   currPlayer === 1 ? currPlayer = 2 : currPlayer = 1;
+  document.getElementById("turn").innerText = `P${currPlayer}'s Turn`
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
